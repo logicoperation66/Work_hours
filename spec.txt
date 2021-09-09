@@ -1,0 +1,19 @@
+Aplikacja ułatwiająca mi zapis godzin pracy bo mam z tym spory problem..
+
+Założenia:
+
+-Aplikacja powinna wiedzieć jaki dziś jest dzień.
+    biblioteka datetime
+
+
+-Pytać od której dziś pracowałem i o której skończyłem.
+
+        wstępnie zakładam że zwykły input do zmiennej. Potem może jakieś okienkowe badziewie się zrobi.
+
+-Jednocześnie powinna otwierać plik excela i w kolumnach zapisywać kolejno data/start_pracy/koniec_pracy
+    biblioteka openpyxl
+
+-Czwarta kolumna to powinna być suma godzin przepracowanych.
+
+-Na koniec zamykać i zapisywać plik.
+
