@@ -14,18 +14,38 @@ def days_cur_month():
 
 
 def blank_sheet_create(name='Adam Wawrzyniak'):
-    """Creating a blank sheet with name, curent month and all days in month"""
+    """Creating a blank sheet with default text and making a good looking
+    dimensions of columns"""
     wb = Workbook()
     sheet = wb.active
     sheet["A1"] = name
+    sheet.column_dimensions['A'].width = 12
+    sheet.column_dimensions['B'].width = 10
+    sheet.column_dimensions['C'].width = 10
+    sheet.column_dimensions['D'].width = 10
+    sheet.column_dimensions['E'].width = 18
+    sheet.merge_cells('A1:B1')
+    sheet.merge_cells('B2:C2')
     sheet["A2"] = datetime.today().strftime("%m-%y")
     sheet["B2"] = 'suma godzin'
+    sheet["E2"] = 'Uwagi/lokalizacja'
+    """There we list all month dates in rows"""
     days_cur_month()
     n = 3
     for day in days_cur_month():
         sheet.cell(row=n, column=1).value = day
         n += 1
     file = wb.save("new_file.xlsx")
+    """"""
+
+
+
+
+
+
+
+
+
     return file
 
 start_prompt = "Witaj w aplikacji do zapisywania i obliczania czasu pracy.\n" \
@@ -41,9 +61,9 @@ if chose == 1:
     #name = input("Podaj swoje imie i nazwisko")
     blank_sheet_create()
 
-
-
-
+# Dalej ustawić poszerzenia pól w arkuszu
+# Ogarnąc sposób na robienbie sumy, automatycznie od ilości dni w miesiącu.
+# Dodać kolorki w miejscach weekendów
 
 
 
