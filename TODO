@@ -1,0 +1,12 @@
+Blank:
+
+- w blank sheet trzeba dodać kod do kolorowania weekendów.
+    https://openpyxl.readthedocs.io/en/stable/styles.html
+- Dodać funkcję sum do poszczególnych komórek.
+
+Praca na blank:
+
+- Dodanie pytania w którym zostaniemy poinformowani o dzisiejszej dacie i
+zapytani o godzine rozpoczęcia i zakończenia pracy.
+- Fajnie by było zrobić to w tk.interze albo nawet zdeployować to do neta i
+odpalać apke na przeglądarce ale to już raczej oddzielny projekt by był.
