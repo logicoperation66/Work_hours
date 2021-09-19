@@ -37,16 +37,10 @@ def blank_sheet_create(name='Adam Wawrzyniak'):
         n += 1
     file = wb.save("new_file.xlsx")
     """"""
-
-
-
-
-
-
-
-
-
     return file
+
+### To co mamy poniżej musi znajdować się w oddzielnym pliku.
+## W tym pliku niech zostaną tylko funkcję.
 
 start_prompt = "Witaj w aplikacji do zapisywania i obliczania czasu pracy.\n" \
                "Wybierz\n\t1-Aby utworzyć nowy arkusz.\n\t2-Aby edytować " \
