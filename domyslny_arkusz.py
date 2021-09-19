@@ -26,6 +26,7 @@ def blank_sheet_create(name='Adam Wawrzyniak'):
     sheet.column_dimensions['E'].width = 18
     sheet.merge_cells('A1:B1')
     sheet.merge_cells('B2:C2')
+    sheet.merge_cells('C1:F1')
     sheet["A2"] = datetime.today().strftime("%m-%y")
     sheet["B2"] = 'suma godzin'
     sheet["E2"] = 'Uwagi/lokalizacja'
