@@ -1,5 +1,7 @@
 from datetime import *
 from openpyxl import *
+from openpyxl.styles import Font, colors, PatternFill
+from openpyxl.styles import Color
 
 def days_cur_month():
     """Listing all days in curent month"""
@@ -33,11 +35,24 @@ def blank_sheet_create(name='Adam Wawrzyniak'):
     """There we list all month dates in rows"""
     days_cur_month()
     n = 3
-    for day in days_cur_month():
-        sheet.cell(row=n, column=1).value = day
-        n += 1
+    for value in days_cur_month():
+        sheet.cell(row=n, column=1).value = value
+        ## To co poniżej jest tragiczne ale to jedyny pomysł na jaki wpadłem. Bezpośrednie wrzucanie value do datetime generowało błedy typu.
+        year = value[:4]
+        month = value[5:7]
+        day = value[8:10]
+        d = datetime(int(year), int(month), int(day))
+        if d.weekday() > 4:
+            #Jak narazie koloruje tylko jedną komórkę. Trzeba dodać kolor na komurkach w kolumnie 1,2 i 3
+            weekend = sheet.cell(row=n, column=1)
+            ft = PatternFill(start_color="ffff00", end_color="ffff00", fill_type="solid")
+            weekend.fill = ft
+            n += 1
+        else:
+            n += 1
+            continue
+
     file = wb.save("new_file.xlsx")
-    """"""
     return file
 
 ### To co mamy poniżej musi znajdować się w oddzielnym pliku.
@@ -56,9 +71,6 @@ if chose == 1:
     #name = input("Podaj swoje imie i nazwisko")
     blank_sheet_create()
 
-# Dalej ustawić poszerzenia pól w arkuszu
-# Ogarnąc sposób na robienbie sumy, automatycznie od ilości dni w miesiącu.
-# Dodać kolorki w miejscach weekendów
 
 
 
