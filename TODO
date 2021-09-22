@@ -10,3 +10,8 @@ Praca na blank:
 zapytani o godzine rozpoczęcia i zakończenia pracy.
 - Fajnie by było zrobić to w tk.interze albo nawet zdeployować to do neta i
 odpalać apke na przeglądarce ale to już raczej oddzielny projekt by był.
+
+
+*** A może użyć fremworka Kivy i zrobić aplikację mobilną z przyciskiem początku
+ pracy i konca która łaczy sie z bazą danych a a potem skrypt pythona pobiera z
+ bazy danych info o godzinach i wprowadza je do pliku xlsx*** ????
