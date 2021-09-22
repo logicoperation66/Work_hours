@@ -41,8 +41,6 @@ def blank_sheet_create(name='Adam Wawrzyniak'):
         sheet.cell(row=n, column=1).value = value
         d = datetime(int(value[:4]), int(value[5:7]), int(value[8:10]))
         if d.weekday() > 4:
-            #Jak narazie koloruje tylko jedną komórkę. Trzeba dodać kolor na
-            # komurkach w kolumnie 1,2 i 3
             for col in range(2 , 5):
                 weekend = sheet.cell(row=n, column=col)
                 weekend.fill = PatternFill(start_color="ffff00", end_color="ffff00", fill_type="solid")
@@ -53,24 +51,5 @@ def blank_sheet_create(name='Adam Wawrzyniak'):
 
     file = wb.save("new_file.xlsx")
     return file
-
-### To co mamy poniżej musi znajdować się w oddzielnym pliku.
-## W tym pliku niech zostaną tylko funkcję.
-
-start_prompt = "Witaj w aplikacji do zapisywania i obliczania czasu pracy.\n" \
-               "Wybierz\n\t1-Aby utworzyć nowy arkusz.\n\t2-Aby edytować " \
-               "istniejący."
-
-
-print(start_prompt)
-
-chose = int(input(':'))
-
-if chose == 1:
-    #name = input("Podaj swoje imie i nazwisko")
-    blank_sheet_create()
-
-
-
 
 
