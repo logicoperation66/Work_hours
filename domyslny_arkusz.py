@@ -37,11 +37,7 @@ def blank_sheet_create(name='Adam Wawrzyniak'):
     n = 3
     for value in days_cur_month():
         sheet.cell(row=n, column=1).value = value
-        ## To co poniżej jest tragiczne ale to jedyny pomysł na jaki wpadłem. Bezpośrednie wrzucanie value do datetime generowało błedy typu.
-        year = value[:4]
-        month = value[5:7]
-        day = value[8:10]
-        d = datetime(int(year), int(month), int(day))
+        d = datetime(int(value[:4]), int(value[5:7]), int(value[8:10]))
         if d.weekday() > 4:
             #Jak narazie koloruje tylko jedną komórkę. Trzeba dodać kolor na komurkach w kolumnie 1,2 i 3
             weekend = sheet.cell(row=n, column=1)
