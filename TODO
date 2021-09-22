@@ -1,8 +1,15 @@
 Blank:
 
-- w blank sheet trzeba dodać kod do kolorowania weekendów.
-    https://openpyxl.readthedocs.io/en/stable/styles.html
+- Zmienić font na size na 10 i styl Calibri
+
+- Dodać kolorowanie nie tylko w pierwszej komórce ale również w kolumnie 2 i 3
+
 - Dodać funkcję sum do poszczególnych komórek.
+
+- Domyślnie czas 00:00:00 gdzie suma.
+
+
+
 
 Praca na blank:
 
