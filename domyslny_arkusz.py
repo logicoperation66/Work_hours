@@ -45,11 +45,17 @@ def blank_sheet_create(name='Adam Wawrzyniak'):
                 weekend.fill = PatternFill(start_color="ffff00", end_color="ffff00", fill_type="solid")
             n += 1
         else:
+            nulltime = "00:00:00"
+            for col in range(2, 4):
+                zero = sheet.cell(row=n, column=col)
+                zero.value = nulltime
+                # Do poprawy... w komórkach wbija się pojedyńczy cudzysłów
+                # przed nulltime. To samo dzieje się przy listowaniu daty.
             n += 1
             continue
     """Sum hours """
     last_row = sheet.max_row
 
-    for i in range(3, last_row):
+    for i in range(3, last_row+1):
         sheet.cell(row=i, column=4).value = f"=SUM(B{i}:C{i})"
         wb.save(f'Godziny{datetime.today().strftime("%m-%y")}.xlsx')
