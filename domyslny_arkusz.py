@@ -33,7 +33,6 @@ def blank_sheet_create(name='Adam Wawrzyniak'):
     sheet["B2"] = 'suma godzin'
     sheet["E2"] = 'Uwagi/lokalizacja'
 
-    col_range = sheet.max_column
     """There we list all month dates in rows"""
     days_cur_month()
     n = 3
@@ -48,8 +47,9 @@ def blank_sheet_create(name='Adam Wawrzyniak'):
         else:
             n += 1
             continue
+    """Sum hours """
+    last_row = sheet.max_row
 
-    file = wb.save("new_file.xlsx")
-    return file
-
-
+    for i in range(3, last_row):
+        sheet.cell(row=i, column=4).value = f"=SUM(B{i}:C{i})"
+        wb.save(f'Godziny{datetime.today().strftime("%m-%y")}.xlsx')
